@@ -1,73 +1,65 @@
-# Welcome to your Lovable project
+# Library Book Management UI
 
-## Project info
+A React + TypeScript single-page application for the book-catalog and circulation-management interface of a library system.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+> This repository contains the frontend application. Its API is served separately.
 
-## How can I edit this code?
+## Features represented in the current source
 
-There are several ways of editing your application.
+- Dashboard
+- Book catalog browsing and updates
+- Add-book workflow
+- Barcode book workflow
+- Book deletion workflow
+- Reports
+- Login screen and protected application routes
 
-**Use Lovable**
+The application uses API endpoints through the Vite development proxy. Real data access and authorization depend on the backend service.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Technology
 
-Changes made via Lovable will be committed automatically to this repo.
+- React 18 and TypeScript
+- Vite
+- React Router
+- Tailwind CSS and shadcn/ui
+- TanStack Query
+- Vitest and ESLint
 
-**Use your preferred IDE**
+## Requirements
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js and npm compatible with the versions declared in `package.json` and `package-lock.json`.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Run locally
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The Vite development server is configured to use port `5001`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Quality checks
 
-**Use GitHub Codespaces**
+```bash
+npm run lint
+npm test
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+These are the scripts declared by the project; run them locally or in CI before treating a change as verified.
 
-## What technologies are used for this project?
+## API configuration and security notes
 
-This project is built with:
+The development proxy targets are defined in `vite.config.ts`. They currently point to HTTP hosts. Production deployments must use HTTPS and a secure server-side proxy/API configuration.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+The current route guard includes a no-token preview exception for localhost and hostnames containing `lovable.app`. Keep preview behavior out of production builds. Frontend route guards are only a user-interface convenience; the backend must enforce authentication and authorization for every data operation.
 
-## How can I deploy this project?
+## Related repositories
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- [Main library frontend](https://github.com/OJK22/front)
+- [Staff administration UI](https://github.com/OJK22/admin)
+- [Lending prototype](https://github.com/OJK22/loan)
 
-## Can I connect a custom domain to my Lovable project?
+## License and project rights
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+No open-source license is currently included. Do not assume permission to reuse or redistribute this code until the rights holder(s) have selected and added an OSI-approved license. Confirm any municipal and team ownership obligations first.
