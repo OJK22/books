@@ -19,8 +19,10 @@ const ProtectedRoute = () => {
   const token = localStorage.getItem("token");
 
   // In Lovable preview, allow access without token for testing
-  const isPreview = window.location.hostname.includes("lovable.app") || 
-                    window.location.hostname === "localhost";
+  const isPreview = import.meta.env.DEV && (
+    window.location.hostname.includes("lovable.app") ||
+    window.location.hostname === "localhost"
+  );
   
   if (!token && !isPreview) {
     return <Navigate to="/login" replace />;
