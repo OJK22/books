@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Library Book Management UI
 
-## Project info
+A React + TypeScript single-page application for book-catalog and circulation-management workflows.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+The current interface includes book catalog browsing and maintenance, add-book and barcode workflows, reports, and protected application routes. Actual data access and authorization are provided by a separately hosted API.
 
-There are several ways of editing your application.
+## Technology
 
-**Use Lovable**
+- React 18 and TypeScript
+- Vite and React Router
+- Tailwind CSS and shadcn/ui
+- TanStack Query
+- Vitest and ESLint
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Requirements
 
-Changes made via Lovable will be committed automatically to this repo.
+Use a supported Node.js version and npm.
 
-**Use your preferred IDE**
+## Run locally
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm ci
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Quality checks
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run lint
+npm test
+npm run build
+```
 
-**Use GitHub Codespaces**
+Run these checks before submitting changes. The presence of a script does not imply that it currently passes in every environment.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Security
 
-## What technologies are used for this project?
+The frontend is not an authorization boundary. The backend must validate identity and permissions for every operation. Use HTTPS in production, keep secrets out of browser bundles, and never commit real credentials or personal data.
 
-This project is built with:
+## Related projects
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- [Main library frontend](https://github.com/OJK22/front)
+- [Staff administration UI](https://github.com/OJK22/admin)
+- [Lending prototype](https://github.com/OJK22/loan)
 
-## How can I deploy this project?
+## Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Please open an issue before large changes. Pull requests should be focused, explain the motivation, include test coverage where practical, and report the checks you ran.
 
-## Can I connect a custom domain to my Lovable project?
+## License
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT. See [LICENSE](./LICENSE).
